@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank you — DuPont Lighters</title>
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body class="checkout-body">
+
+  <main class="ty">
+
+    <!-- Brand bar -->
+    <header class="co-brand" style="grid-column:1/-1;margin-bottom:0;">
+      <a class="co-brand__logo" href="index.html">
+        <span class="co-brand__mark">D</span>
+        <span class="co-brand__name">DuPont Lighters</span>
+      </a>
+      <a href="cart.html" aria-label="Cart">
+        <svg class="co-brand__cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 7h14l-1.5 12a2 2 0 0 1-2 1.7H8.5a2 2 0 0 1-2-1.7L5 7z"/>
+          <path d="M9 7V5a3 3 0 0 1 6 0v2"/>
+        </svg>
+      </a>
+    </header>
+
+    <!-- Main confirmation -->
+    <section class="ty__main">
+      <p class="ty__order">Order #DPL-10472</p>
+      <h1 class="ty__heading">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" fill="#008060" stroke="#008060"/>
+          <path d="M8 12.5l2.5 2.5L16 9.5" stroke="#fff"/>
+        </svg>
+        Thank you, Jimmy!
+      </h1>
+      <p class="ty__sub">Your order is confirmed. We've sent your receipt to <strong>jimmy@example.com</strong>.</p>
+
+      <!-- Map / shipping panel -->
+      <div class="ty__panel">
+        <div class="ty__map" aria-hidden="true">
+          <div class="ty__map-pin"></div>
+        </div>
+        <h3 class="ty__panel-title">Your order is on its way</h3>
+        <p class="ty__field-value" style="margin-bottom:14px;">Estimated arrival: <strong>3–5 business days</strong> via FedEx Priority.</p>
+        <ul class="ty__steps">
+          <li><span class="ty__step-dot ty__step-dot--done">✓</span><span>Order confirmed</span></li>
+          <li><span class="ty__step-dot ty__step-dot--done">✓</span><span>Payment received</span></li>
+          <li><span class="ty__step-dot"></span><span>Preparing for dispatch — Faverges atelier</span></li>
+          <li><span class="ty__step-dot"></span><span>In transit</span></li>
+          <li><span class="ty__step-dot"></span><span>Delivered</span></li>
+        </ul>
+      </div>
+
+      <!-- Order details two-column -->
+      <div class="ty__cols">
+        <div class="ty__panel">
+          <h3 class="ty__panel-title">Contact information</h3>
+          <p class="ty__field-label">Email</p>
+          <p class="ty__field-value">jimmy@example.com</p>
+          <p class="ty__field-label">Phone</p>
+          <p class="ty__field-value">+1 (555) 401-2210</p>
+        </div>
+        <div class="ty__panel">
+          <h3 class="ty__panel-title">Payment</h3>
+          <p class="ty__field-label">Method</p>
+          <p class="ty__field-value">Visa ending in •••• 4421</p>
+          <p class="ty__field-label">Billing address</p>
+          <p class="ty__field-value">Same as shipping</p>
+        </div>
+        <div class="ty__panel">
+          <h3 class="ty__panel-title">Shipping address</h3>
+          <p class="ty__field-value">
+            Jimmy Abraham<br>
+            350 Mission Street, Floor 12<br>
+            San Francisco, CA 94105<br>
+            United States
+          </p>
+        </div>
+        <div class="ty__panel">
+          <h3 class="ty__panel-title">Shipping method</h3>
+          <p class="ty__field-value">FedEx Priority — Complimentary</p>
+          <p class="ty__field-label" style="margin-top:14px;">Includes</p>
+          <p class="ty__field-value">Signature presentation box, lifetime servicing certificate.</p>
+        </div>
+      </div>
+
+      <div class="ty__support">
+        Need help? Email <a href="mailto:concierge@dupontlighters.com">concierge@dupontlighters.com</a> or call <strong>+1 (888) 555-0188</strong>. Our atelier-trained team is available 9am–6pm ET, Monday through Saturday.
+      </div>
+
+      <a class="ty__cta" href="index.html">Continue shopping</a>
+    </section>
+
+    <!-- Order summary -->
+    <aside class="co-summary" aria-label="Order summary">
+      <ul class="co-summary__items">
+        <li class="co-summary__item">
+          <div class="co-summary__media">
+            <img src="images/products/ligne-2-palladium.webp" alt="Ligne 2 Palladium">
+            <span class="co-summary__qty">1</span>
+          </div>
+          <div>
+            <p class="co-summary__item-name">Ligne 2 Palladium</p>
+            <p class="co-summary__item-meta">Finish: Palladium</p>
+          </div>
+          <span class="co-summary__item-price">$1,650.00</span>
+        </li>
+      </ul>
+
+      <div class="co-totals" style="border-top:1px solid var(--co-line); padding-top:18px;">
+        <div class="co-totals__row">
+          <span>Subtotal</span>
+          <span>$1,650.00</span>
+        </div>
+        <div class="co-totals__row">
+          <span>Shipping</span>
+          <span>Free</span>
+        </div>
+        <div class="co-totals__row">
+          <span>Taxes</span>
+          <span>$132.00</span>
+        </div>
+        <div class="co-totals__row co-totals__row--total">
+          <span>Total paid</span>
+          <span><span class="co-currency">USD</span>$1,782.00</span>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DuPont Lighters — Pass 1 Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific (style-guide scaffolding only — not part of the system) */
+    .sg-page { padding-block: var(--sp-9) var(--sp-10); }
+    .sg-section { padding: var(--sp-8) 0; border-top: 1px solid var(--line-soft); }
+    .sg-section:first-of-type { border-top: 0; padding-top: 0; }
+    .sg-head {
+      display: flex; align-items: baseline; gap: var(--sp-4);
+      margin-bottom: var(--sp-6); flex-wrap: wrap;
+    }
+    .sg-head .h2 { margin: 0; }
+    .sg-tag {
+      font-family: var(--font-sans);
+      font-size: var(--fs-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .sg-note {
+      color: var(--ink-soft);
+      max-width: 60ch;
+      margin-bottom: var(--sp-5);
+    }
+    .sg-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-5); }
+    .sg-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-5); }
+    .sg-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+    @media (max-width: 900px) {
+      .sg-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .sg-grid-3 { grid-template-columns: 1fr; }
+      .sg-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* Swatches */
+    .swatch {
+      display: grid; grid-template-rows: 120px auto;
+      border: 1px solid var(--line-soft);
+    }
+    .swatch__color { display: block; }
+    .swatch__meta { padding: var(--sp-3); background: var(--surface-2); }
+    .swatch__name { font-size: var(--fs-sm); margin: 0; }
+    .swatch__value {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: var(--fs-xs); color: var(--ink-muted); margin: 2px 0 0;
+    }
+
+    /* Type specimen */
+    .type-row { padding: var(--sp-5) 0; border-bottom: 1px dashed var(--line-soft); }
+    .type-row:last-child { border-bottom: 0; }
+    .type-label {
+      display: block; color: var(--ink-muted);
+      font-size: var(--fs-xs); letter-spacing: var(--tracking-wide);
+      text-transform: uppercase; margin-bottom: var(--sp-2);
+    }
+
+    /* Wordmark comparison */
+    .lockup-box {
+      background: var(--surface-2);
+      padding: var(--sp-7) var(--sp-5);
+      border: 1px solid var(--line-soft);
+      display: grid; place-items: center;
+    }
+    .lockup-label {
+      font-size: var(--fs-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-top: var(--sp-4);
+      text-align: center;
+    }
+    /* Hero stand-in — gradient + vignette until real photography is supplied */
+    .hero .hero__media {
+      background:
+        radial-gradient(ellipse at 65% 45%, rgba(212, 170, 90, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 30% 70%, rgba(60, 40, 20, 0.6) 0%, transparent 60%),
+        linear-gradient(140deg, #120d08 0%, #2a1f12 55%, #0a0805 100%);
+    }
+    .hero-placeholder-note {
+      position: absolute; right: 16px; bottom: 16px;
+      font-size: var(--fs-xs); color: rgba(255,255,255,0.55);
+      letter-spacing: var(--tracking-label); text-transform: uppercase;
+      z-index: 2;
+    }
+
+    /* Product card SVG stand-in */
+    .lighter-svg { width: 58%; max-width: 160px; height: auto; }
+
+    /* Review banner */
+    .review-banner {
+      background: var(--ink);
+      color: var(--accent-on-dark);
+      padding: var(--sp-3) var(--gutter);
+      text-align: center;
+      font-size: var(--fs-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="review-banner">DuPont Lighters · Pass 1 — Design System Preview · For internal review</div>
+
+  <!-- ==================== HEADER (live) ==================== -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" placeholder="Search" aria-label="Search">
+      </div>
+      <a href="#" class="wordmark" aria-label="DuPont Lighters home">
+        <span class="wordmark__name">DUPONT</span>
+        <span class="wordmark__tag">Lighters</span>
+      </a>
+      <div class="header-utility">
+        <a class="utility-link" href="#">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+          Account
+        </a>
+        <a class="utility-link" href="#">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 016 0"/>
+          </svg>
+          Cart
+        </a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">New Arrival</a></li>
+        <li><a href="#">About DuPont</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="sg-page">
+    <div class="container">
+
+      <!-- ==================== INTRO ==================== -->
+      <section class="sg-section">
+        <span class="eyebrow">Pass 1 · Design foundation</span>
+        <h1 class="display" style="margin-top: var(--sp-3);">The visual system,<br>before the pages.</h1>
+        <p class="lede" style="margin-top: var(--sp-5);">
+          Extracted from the two approved Chatterley screens and rebadged for <strong>DuPont Lighters</strong>.
+          Every component below is what later passes will compose. Approve, refine, or redirect
+          any piece — nothing downstream is built until this foundation is signed off.
+        </p>
+      </section>
+
+      <!-- ==================== WORDMARK LOCKUP ==================== -->
+      <section class="sg-section">
+        <div class="sg-head">
+          <h2 class="h2">Wordmark lockup</h2>
+          <span class="sg-tag">Option B — approved</span>
+        </div>
+        <p class="sg-note">
+          Longer flanking rules anchor the short "DUPONT" wordmark. Letter-spacing 0.38em, rules 64px.
+          Footer uses a scaled variant (50px rules at 1.375rem name).
+        </p>
+        <div class="lockup-box">
+          <div class="wordmark">
+            <span class="wordmark__name">DUPONT</span>
+            <span class="wordmark__tag">Lighters</span>
+          </div>
+          <div class="lockup-label">Approved lockup — applied to header &amp; footer</div>
+        </div>
+      </section>
+
+      <!-- ==================== COLOR ==================== -->
+      <section class="sg-section">
+        <div class="sg-head"><h2 class="h2">Palette</h2><span class="sg-tag">Tokens</span></div>
+        <p class="sg-note">Warm cream surfaces, charcoal ink. The stone tone is reserved for product photography backdrops.</p>
+        <div class="sg-grid-4">
+          <div class="swatch"><span class="swatch__color" style="background:#FAF8F5;"></span><div class="swatch__meta"><p class="swatch__name">Surface</p><p class="swatch__value">#FAF8F5</p></div></div>
+          <div class="swatch"><span class="swatch__color" style="background:#EDE8DF;"></span><div class="swatch__meta"><p class="swatch__name">Stone (product backdrop)</p><p class="swatch__value">#EDE8DF</p></div></div>
+          <div class="swatch"><span class="swatch__color" style="background:#15110C;"></span><div class="swatch__meta"><p class="swatch__name">Ink · Accent dark</p><p class="swatch__value">#15110C</p></div></div>
+          <div class="swatch"><span class="swatch__color" style="background:#8A8376;"></span><div class="swatch__meta"><p class="swatch__name">Ink muted</p><p class="swatch__value">#8A8376</p></div></div>
+          <div class="swatch"><span class="swatch__color" style="background:#D6CEBE;"></span><div class="swatch__meta"><p class="swatch__name">Line</p><p class="swatch__value">#D6CEBE</p></div></div>
+          <div class="swatch"><span class="swatch__color" style="background:#3A332A;"></span><div class="swatch__meta"><p class="swatch__name">Ink soft</p><p class="swatch__value">#3A332A</p></div></div>
+          <div class="swatch"><span class="swatch__color" style="background:#FBF8F2;"></span><div class="swatch__meta"><p class="swatch__name">On-dark text</p><p class="swatch__value">#FBF8F2</p></div></div>
+          <div class="swatch"><span class="swatch__color" style="background:#FFFFFF; border:1px solid var(--line);"></span><div class="swatch__meta"><p class="swatch__name">Surface 2</p><p class="swatch__value">#FFFFFF</p></div></div>
+        </div>
+      </section>
+
+      <!-- ==================== TYPOGRAPHY ==================== -->
+      <section class="sg-section">
+        <div class="sg-head"><h2 class="h2">Typography</h2><span class="sg-tag">Playfair Display · Raleway</span></div>
+        <p class="sg-note">Serif display in italic at the largest size (matches the editorial feel of the Chatterley hero); regular serif for page titles and product names; sans for everything structural.</p>
+
+        <div class="type-row">
+          <span class="type-label">Display · italic · 40–64px</span>
+          <div class="display">Limited edition</div>
+        </div>
+        <div class="type-row">
+          <span class="type-label">H1 · page title · 32–44px</span>
+          <div class="h1">The Collection</div>
+        </div>
+        <div class="type-row">
+          <span class="type-label">H2 · section · 24–32px</span>
+          <div class="h2">A heritage of French craftsmanship</div>
+        </div>
+        <div class="type-row">
+          <span class="type-label">H3 · product name · 22px</span>
+          <div class="h3">Ligne 2 Palladium Lighter</div>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Body · 16px · 1.65 line-height</span>
+          <p style="max-width:56ch; margin:0;">Since 1872, S.T. Dupont has built lighters in the same Faverges workshop — precision instruments with the signature "cling" when opened. Each piece is tested by hand before it leaves the atelier.</p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Eyebrow · uppercase · tracked</span>
+          <span class="eyebrow">New Arrivals · Spring 2026</span>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Nav · uppercase · tracked 0.18em</span>
+          <span style="font-family: var(--font-sans); font-size: var(--fs-nav); letter-spacing: var(--tracking-nav); text-transform: uppercase;">Home &nbsp; Categories &nbsp; New Arrival &nbsp; About DuPont</span>
+        </div>
+      </section>
+
+      <!-- ==================== BUTTONS ==================== -->
+      <section class="sg-section">
+        <div class="sg-head"><h2 class="h2">Buttons &amp; links</h2></div>
+        <div class="sg-grid-3">
+          <div class="stack-sm">
+            <span class="type-label">Primary</span>
+            <a href="#" class="btn">Add to cart</a>
+          </div>
+          <div class="stack-sm">
+            <span class="type-label">Ghost</span>
+            <a href="#" class="btn btn--ghost">Filter</a>
+          </div>
+          <div class="stack-sm">
+            <span class="type-label">Dotted text link</span>
+            <a href="#" class="link-dotted">Explore the collection →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== FORM INPUTS ==================== -->
+      <section class="sg-section">
+        <div class="sg-head"><h2 class="h2">Form inputs</h2></div>
+        <div class="sg-grid-3">
+          <label class="field">
+            <span class="field__label">Name</span>
+            <input class="input" type="text" placeholder="Jane Dupont">
+          </label>
+          <label class="field">
+            <span class="field__label">Email</span>
+            <input class="input" type="email" placeholder="you@example.com">
+          </label>
+          <label class="field">
+            <span class="field__label">Sort by</span>
+            <select class="select">
+              <option>Newest arrivals</option>
+              <option>Price: low to high</option>
+              <option>Price: high to low</option>
+            </select>
+          </label>
+        </div>
+        <label class="field" style="margin-top: var(--sp-5); max-width: 560px;">
+          <span class="field__label">Message</span>
+          <textarea class="textarea" rows="4" placeholder="Tell us what you're looking for…"></textarea>
+        </label>
+      </section>
+
+      <!-- ==================== BREADCRUMBS ==================== -->
+      <section class="sg-section">
+        <div class="sg-head"><h2 class="h2">Breadcrumbs</h2></div>
+        <ol class="breadcrumbs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li aria-current="page">Ligne 2</li>
+        </ol>
+      </section>
+
+      <!-- ==================== PRODUCT CARD ==================== -->
+      <section class="sg-section">
+        <div class="sg-head"><h2 class="h2">Product card</h2><span class="sg-tag">Used in PLP &amp; related</span></div>
+        <p class="sg-note">Neutral stone backdrop, product floated with a soft drop-shadow, serif name, quiet price.</p>
+        <div class="sg-grid-4">
+          <!-- repeated card pattern × 4 with 4 SVG lighter silhouettes -->
+          <a class="product-card" href="#">
+            <div class="product-card__media">
+              <svg class="lighter-svg" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#d9d9db"/><stop offset="1" stop-color="#8d8e92"/>
+                </linearGradient></defs>
+                <rect x="22" y="34" width="56" height="112" rx="3" fill="url(#g1)" stroke="#6b6c70" stroke-width="0.6"/>
+                <rect x="22" y="30" width="56" height="10" rx="2" fill="#b8b9bc" stroke="#6b6c70" stroke-width="0.5"/>
+                <rect x="40" y="20" width="20" height="10" fill="#a7a8ac"/>
+                <g fill="none" stroke="#9a9ba0" stroke-width="0.35">
+                  <line x1="26" y1="46" x2="74" y2="46"/><line x1="26" y1="58" x2="74" y2="58"/>
+                  <line x1="26" y1="70" x2="74" y2="70"/><line x1="26" y1="82" x2="74" y2="82"/>
+                  <line x1="26" y1="94" x2="74" y2="94"/><line x1="26" y1="106" x2="74" y2="106"/>
+                  <line x1="26" y1="118" x2="74" y2="118"/><line x1="26" y1="130" x2="74" y2="130"/>
+                </g>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Ligne 2 Palladium</h3>
+              <p class="product-card__price">$1,650.00</p>
+            </div>
+          </a>
+          <a class="product-card" href="#">
+            <div class="product-card__media">
+              <svg class="lighter-svg" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#f2c66b"/><stop offset="1" stop-color="#8a5f1c"/>
+                </linearGradient></defs>
+                <rect x="22" y="34" width="56" height="112" rx="3" fill="url(#g2)" stroke="#5a3f12" stroke-width="0.6"/>
+                <rect x="22" y="30" width="56" height="10" rx="2" fill="#c69648" stroke="#5a3f12" stroke-width="0.5"/>
+                <rect x="40" y="20" width="20" height="10" fill="#a97b2b"/>
+                <g fill="#7a5014" opacity="0.55">
+                  <circle cx="35" cy="60" r="2"/><circle cx="50" cy="60" r="2"/><circle cx="65" cy="60" r="2"/>
+                  <circle cx="35" cy="90" r="2"/><circle cx="50" cy="90" r="2"/><circle cx="65" cy="90" r="2"/>
+                  <circle cx="35" cy="120" r="2"/><circle cx="50" cy="120" r="2"/><circle cx="65" cy="120" r="2"/>
+                </g>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Ligne 2 Gold Guilloché</h3>
+              <p class="product-card__price">$2,820.00</p>
+            </div>
+          </a>
+          <a class="product-card" href="#">
+            <div class="product-card__media">
+              <svg class="lighter-svg" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#2a2a2e"/><stop offset="1" stop-color="#0c0c0e"/>
+                </linearGradient></defs>
+                <rect x="22" y="34" width="56" height="112" rx="3" fill="url(#g3)" stroke="#000" stroke-width="0.6"/>
+                <rect x="22" y="30" width="56" height="10" rx="2" fill="#3a3a3e" stroke="#000" stroke-width="0.5"/>
+                <rect x="40" y="20" width="20" height="10" fill="#4a4a4e"/>
+                <rect x="34" y="76" width="32" height="8" fill="none" stroke="#7a7a7e" stroke-width="0.4"/>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Ligne 2 Black Lacquer</h3>
+              <p class="product-card__price">$1,160.00</p>
+            </div>
+          </a>
+          <a class="product-card" href="#">
+            <div class="product-card__media">
+              <svg class="lighter-svg" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#e9e6df"/><stop offset="1" stop-color="#aaa69c"/>
+                </linearGradient></defs>
+                <rect x="22" y="34" width="56" height="112" rx="3" fill="url(#g4)" stroke="#7e7a70" stroke-width="0.6"/>
+                <rect x="22" y="30" width="56" height="10" rx="2" fill="#c7c4bb" stroke="#7e7a70" stroke-width="0.5"/>
+                <rect x="40" y="20" width="20" height="10" fill="#b5b2a8"/>
+                <g fill="none" stroke="#9a968c" stroke-width="0.4">
+                  <path d="M26,50 Q50,70 74,50"/><path d="M26,80 Q50,100 74,80"/>
+                  <path d="M26,110 Q50,130 74,110"/>
+                </g>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Ligne D Initial</h3>
+              <p class="product-card__price">$1,050.00</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== HERO (live, full-bleed) ==================== -->
+    <section class="sg-section" style="padding-inline: 0;">
+      <div class="container" style="margin-bottom: var(--sp-5);">
+        <div class="sg-head"><h2 class="h2">Hero slide</h2><span class="sg-tag">Pass 2 will add the carousel</span></div>
+        <p class="sg-note">
+          Placeholder imagery below (gradient + vignette) will be replaced with licensed S.T. Dupont lifestyle
+          photography. Pass 2 converts this into a 3–5 slide rotating carousel with pagination dots.
+        </p>
+      </div>
+      <div class="hero">
+        <div class="hero__media" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <span class="hero__eyebrow">Collection Privée</span>
+          <h3 class="hero__title">Limited edition</h3>
+          <a class="link-dotted hero__cta" href="#">Explore the collection →</a>
+        </div>
+        <div class="hero-placeholder-note">Photography placeholder</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER (live) ==================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="wordmark">
+          <span class="wordmark__name">DUPONT</span>
+          <span class="wordmark__tag">Lighters</span>
+        </div>
+        <p>
+          Authorised U.S. distributor of S.T. Dupont — lighters crafted in Faverges, France,
+          since 1872. Curated for collectors and connoisseurs.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Ligne 2</a></li>
+          <li><a href="#">Ligne D</a></li>
+          <li><a href="#">Limited Editions</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Gift Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Shipping &amp; Delivery</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Care &amp; Servicing</a></li>
+          <li><a href="#">Authenticity</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Maison</h4>
+        <ul>
+          <li><a href="#">About DuPont</a></li>
+          <li><a href="#">Heritage</a></li>
+          <li><a href="#">Craftsmanship</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+        <h4 style="margin-top: var(--sp-6);">Newsletter</h4>
+        <form class="newsletter" onsubmit="return false;">
+          <input type="email" placeholder="Your email" aria-label="Email address">
+          <button type="submit">Join →</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 DuPont Lighters · U.S. distributor</span>
+      <span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Accessibility</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

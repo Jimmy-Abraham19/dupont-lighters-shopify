@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DuPont Lighters — French Luxury Lighters, Since 1872</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="wordmark" aria-label="DuPont Lighters home">
+        <span class="wordmark__name">DUPONT</span>
+        <span class="wordmark__tag">Lighters</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li class="has-mega" data-mega-trigger><a href="collection.html">Categories</a></li>
+          <li><a href="collection.html">New Arrival</a></li>
+          <li><a href="about.html">About DuPont</a></li>
+        </ul>
+      </nav>
+      <div class="header-utility">
+        <button class="icon-btn" type="button" aria-label="Open search" data-search-toggle>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <a class="icon-btn" href="#" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+        </a>
+        <a class="icon-btn" href="cart.html" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 016 0"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Search panel (slides down on icon click) -->
+    <div class="search-panel" data-search-panel aria-hidden="true" aria-label="Site search">
+      <div class="search-panel__inner">
+        <form class="search-panel__field" role="search" onsubmit="return false;">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="search" placeholder="Search lighters, finishes, references…" aria-label="Search lighters">
+          <button class="search-panel__close" type="button" aria-label="Close search" data-search-close>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>
+            </svg>
+          </button>
+        </form>
+
+        <div class="search-panel__columns">
+          <div>
+            <p class="search-panel__col-title">Recent searches</p>
+            <ul class="search-panel__recents">
+              <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>Ligne 2 Palladium</span></a></li>
+              <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>Year of the Serpent</span></a></li>
+              <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>Lighter servicing</span></a></li>
+              <li><a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg><span>Gold guilloché finish</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="search-panel__col-title">Suggested for you</p>
+            <div class="search-panel__suggestions">
+              <a class="search-panel__suggestion" href="product.html">
+                <div class="search-panel__suggestion-thumb"><img src="images/products/ligne-2-palladium.webp" alt=""></div>
+                <div>
+                  <p class="search-panel__suggestion-name">Ligne 2 Palladium</p>
+                  <p class="search-panel__suggestion-meta">$1,650</p>
+                </div>
+              </a>
+              <a class="search-panel__suggestion" href="product.html">
+                <div class="search-panel__suggestion-thumb"><img src="images/products/limited-serpent.webp" alt=""></div>
+                <div>
+                  <p class="search-panel__suggestion-name">Slim 7 Serpent</p>
+                  <p class="search-panel__suggestion-meta">$2,950</p>
+                </div>
+              </a>
+              <a class="search-panel__suggestion" href="product.html">
+                <div class="search-panel__suggestion-thumb"><img src="images/products/ligne-2-gold-guilloche.webp" alt=""></div>
+                <div>
+                  <p class="search-panel__suggestion-name">Ligne 2 Gold Guilloché</p>
+                  <p class="search-panel__suggestion-meta">$2,820</p>
+                </div>
+              </a>
+              <a class="search-panel__suggestion" href="product.html">
+                <div class="search-panel__suggestion-thumb"><img src="images/products/ligne-d-initial.webp" alt=""></div>
+                <div>
+                  <p class="search-panel__suggestion-name">Ligne D Initial</p>
+                  <p class="search-panel__suggestion-meta">$1,050</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="search-backdrop" data-search-backdrop aria-hidden="true"></div>
+
+  <main>
+
+    <!-- ==================== HERO CAROUSEL ==================== -->
+    <section class="carousel" aria-label="Featured collections" aria-roledescription="carousel">
+      <div class="carousel__track">
+
+        <div class="carousel__slide slide-heritage" aria-hidden="false" aria-roledescription="slide" aria-label="1 of 3">
+          <div class="hero">
+            <div class="hero__media" aria-hidden="true"></div>
+            <div class="hero__inner">
+              <span class="hero__eyebrow">Since 1872</span>
+              <h2 class="hero__title">Crafted in Faverges</h2>
+              <a class="link-dotted hero__cta" href="about.html">Discover the maison</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel__slide slide-limited" aria-hidden="true" aria-roledescription="slide" aria-label="2 of 3">
+          <div class="hero">
+            <div class="hero__media" aria-hidden="true"></div>
+            <div class="hero__inner">
+              <span class="hero__eyebrow">Collection Privée</span>
+              <h2 class="hero__title">Limited edition</h2>
+              <a class="link-dotted hero__cta" href="collection.html">Explore the collection</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel__slide slide-new" aria-hidden="true" aria-roledescription="slide" aria-label="3 of 3">
+          <div class="hero">
+            <div class="hero__media" aria-hidden="true"></div>
+            <div class="hero__inner">
+              <span class="hero__eyebrow">Spring 2026</span>
+              <h2 class="hero__title">The new arrivals</h2>
+              <a class="link-dotted hero__cta" href="collection.html">Shop the new drop</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel__arrow carousel__arrow--prev" aria-label="Previous slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="15 6 9 12 15 18"/></svg>
+      </button>
+      <button class="carousel__arrow carousel__arrow--next" aria-label="Next slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
+
+      <div class="carousel__dots" role="tablist" aria-label="Select slide">
+        <button class="carousel__dot" aria-current="true"  aria-label="Slide 1"></button>
+        <button class="carousel__dot" aria-current="false" aria-label="Slide 2"></button>
+        <button class="carousel__dot" aria-current="false" aria-label="Slide 3"></button>
+      </div>
+    </section>
+
+    <!-- ==================== COLLECTIONS (3-up tiles) ==================== -->
+    <section class="section container" aria-labelledby="collections-title">
+      <div class="section-title">
+        <span class="eyebrow">Our Collections</span>
+        <h2 id="collections-title" class="h2">Three families, one savoir-faire</h2>
+        <p class="section-desc">
+          From the slim icon of the Ligne 2 to the contemporary proportions of the Ligne D —
+          each lighter carries the signature "cling" of a Dupont.
+        </p>
+      </div>
+
+      <div class="collection-tiles">
+        <a class="collection-tile" href="collection.html">
+          <div class="collection-tile__media">
+            <img src="images/collections/ligne-2.webp" alt="Ligne 2 — black and gold lighter">
+          </div>
+          <div class="collection-tile__body">
+            <span class="collection-tile__eyebrow">The slim icon</span>
+            <h3 class="collection-tile__name">Ligne 2</h3>
+            <span class="collection-tile__cta">Shop collection</span>
+          </div>
+        </a>
+
+        <a class="collection-tile" href="collection.html">
+          <div class="collection-tile__media">
+            <img src="images/collections/ligne-d.webp" alt="Ligne D — silver and black lacquer lighter">
+          </div>
+          <div class="collection-tile__body">
+            <span class="collection-tile__eyebrow">Contemporary proportions</span>
+            <h3 class="collection-tile__name">Ligne D</h3>
+            <span class="collection-tile__cta">Shop collection</span>
+          </div>
+        </a>
+
+        <a class="collection-tile" href="collection.html">
+          <div class="collection-tile__media">
+            <img src="images/collections/limited-editions.webp" alt="Limited Editions — Orlinski sculpted lighter">
+          </div>
+          <div class="collection-tile__body">
+            <span class="collection-tile__eyebrow">Collection Privée</span>
+            <h3 class="collection-tile__name">Limited Editions</h3>
+            <span class="collection-tile__cta">Shop collection</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== NEW ARRIVALS ==================== -->
+    <section class="section container" aria-labelledby="new-arrivals-title">
+      <div class="row-head">
+        <div>
+          <span class="eyebrow">Spring 2026</span>
+          <h2 id="new-arrivals-title" class="h2" style="margin-top: var(--sp-3);">New arrivals</h2>
+        </div>
+        <a class="link-dotted" href="collection.html">View all</a>
+      </div>
+
+      <div class="product-grid">
+        <a class="product-card" href="product.html">
+          <div class="product-card__media">
+            <img class="product-card__media-primary" src="images/products/ligne-2-palladium.webp" alt="Ligne 2 Palladium lighter">
+            <img class="product-card__media-alt" src="images/products/ligne-2-palladium-alt.webp" alt="" aria-hidden="true">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Ligne 2 Palladium</h3>
+            <p class="product-card__price">$1,650.00</p>
+          </div>
+        </a>
+
+        <a class="product-card" href="product.html">
+          <div class="product-card__media">
+            <img class="product-card__media-primary" src="images/products/ligne-2-gold-guilloche.webp" alt="Ligne 2 Gold Guilloché lighter">
+            <img class="product-card__media-alt" src="images/products/ligne-2-gold-guilloche-alt.webp" alt="" aria-hidden="true">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Ligne 2 Gold Guilloché</h3>
+            <p class="product-card__price">$2,820.00</p>
+          </div>
+        </a>
+
+        <a class="product-card" href="product.html">
+          <div class="product-card__media">
+            <img class="product-card__media-primary" src="images/products/limited-serpent.webp" alt="Slim 7 Year of the Serpent — limited edition lighter">
+            <img class="product-card__media-alt" src="images/products/limited-serpent-alt.webp" alt="" aria-hidden="true">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Slim 7 Year of the Serpent</h3>
+            <p class="product-card__price">$2,950.00</p>
+          </div>
+        </a>
+
+        <a class="product-card" href="product.html">
+          <div class="product-card__media">
+            <img class="product-card__media-primary" src="images/products/ligne-d-initial.webp" alt="Ligne D Initial lighter">
+            <img class="product-card__media-alt" src="images/products/ligne-d-initial-alt.webp" alt="" aria-hidden="true">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Ligne D Initial</h3>
+            <p class="product-card__price">$1,050.00</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== HERITAGE EDITORIAL ==================== -->
+    <section class="section container" aria-labelledby="heritage-title">
+      <div class="editorial">
+        <div class="editorial__media">
+          <img src="images/editorial/heritage-atelier.webp" alt="Heritage — S.T. Dupont lighters on archival pages">
+        </div>
+        <div class="editorial__body">
+          <span class="eyebrow">Since 1872</span>
+          <h2 id="heritage-title" class="h2">A century and a half of French savoir-faire.</h2>
+          <p>
+            Every DuPont lighter is born in a single atelier in Faverges, at the foot of the French Alps.
+            More than six hundred hand operations — polishing, lacquering, guillochage, final voicing — go
+            into the making of a single piece. Each one is palladium-plated, hand-finished, and tested
+            until it delivers the unmistakable "cling" that has been the maison's signature since 1952.
+          </p>
+          <p>
+            It is the kind of object that outlives its first owner. A companion passed down, refilled,
+            serviced, and carried for half a century.
+          </p>
+          <a href="about.html" class="link-dotted">Discover the maison</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURE BAND / QUOTE ==================== -->
+    <section class="feature-band" aria-label="Maison quote">
+      <div class="feature-band__inner">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.7);">The signature</span>
+        <blockquote style="margin-top: var(--sp-3);">
+          "Open a DuPont and you hear it before you see it — the unmistakable cling of a lighter made in Faverges."
+        </blockquote>
+        <cite>— The Maison, Est. 1872</cite>
+      </div>
+    </section>
+
+    <!-- ==================== CRAFTSMANSHIP EDITORIAL (reverse) ==================== -->
+    <section class="section container" aria-labelledby="craft-title">
+      <div class="editorial editorial--reverse">
+        <div class="editorial__media">
+          <img src="images/editorial/craftsmanship.webp" alt="Craftsmanship — gloved hands finishing a Dupont lighter">
+        </div>
+        <div class="editorial__body">
+          <span class="eyebrow">Craftsmanship</span>
+          <h2 id="craft-title" class="h2">Six hundred gestures. One lighter.</h2>
+          <p>
+            From the first sheet of brass to the final lacquer, each DuPont lighter moves through
+            more than 600 precise operations — many still performed by hand in the Faverges atelier.
+            The result is an object so balanced it can be refilled and serviced indefinitely, passed
+            from collector to collector, decade to decade.
+          </p>
+          <a href="about.html" class="link-dotted">Inside the atelier</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NEWSLETTER CTA ==================== -->
+    <section class="newsletter-cta" aria-labelledby="newsletter-title">
+      <span class="eyebrow">The DuPont Club</span>
+      <h2 id="newsletter-title" class="h2" style="margin-top: var(--sp-3);">Be first to our collectors' releases.</h2>
+      <p class="section-desc">Early access to limited editions, atelier stories, and private pre-orders.</p>
+      <form onsubmit="return false;" aria-label="Newsletter signup">
+        <input type="email" placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Join</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="wordmark">
+          <span class="wordmark__name">DUPONT</span>
+          <span class="wordmark__tag">Lighters</span>
+        </div>
+        <p>
+          Authorised U.S. distributor of S.T. Dupont — lighters crafted in Faverges, France,
+          since 1872. Curated for collectors and connoisseurs.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="collection.html">Ligne 2</a></li>
+          <li><a href="collection.html">Ligne D</a></li>
+          <li><a href="collection.html">Limited Editions</a></li>
+          <li><a href="collection.html">New Arrivals</a></li>
+          <li><a href="collection.html">Gift Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Shipping &amp; Delivery</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Care &amp; Servicing</a></li>
+          <li><a href="#">Authenticity</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>The Maison</h4>
+        <ul>
+          <li><a href="about.html">About DuPont</a></li>
+          <li><a href="about.html">Heritage</a></li>
+          <li><a href="about.html">Craftsmanship</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+        <h4 style="margin-top: var(--sp-6);">Newsletter</h4>
+        <form class="newsletter" onsubmit="return false;">
+          <input type="email" placeholder="Your email" aria-label="Email address">
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 DuPont Lighters · U.S. distributor</span>
+      <span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Accessibility</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- ==================== CAROUSEL SCRIPT ==================== -->
+  <script>
+    (function () {
+      var carousel = document.querySelector('.carousel');
+      if (!carousel) return;
+      var slides = Array.prototype.slice.call(carousel.querySelectorAll('.carousel__slide'));
+      var dots   = Array.prototype.slice.call(carousel.querySelectorAll('.carousel__dot'));
+      var prev   = carousel.querySelector('.carousel__arrow--prev');
+      var next   = carousel.querySelector('.carousel__arrow--next');
+      var i = 0, timer;
+      var INTERVAL = 8000;
+
+      function show(n) {
+        i = (n + slides.length) % slides.length;
+        slides.forEach(function (s, idx) {
+          s.setAttribute('aria-hidden', idx === i ? 'false' : 'true');
+        });
+        dots.forEach(function (d, idx) {
+          d.setAttribute('aria-current', idx === i ? 'true' : 'false');
+        });
+      }
+      function start() { timer = setInterval(function () { show(i + 1); }, INTERVAL); }
+      function stop()  { clearInterval(timer); }
+
+      dots.forEach(function (d, idx) { d.addEventListener('click', function () { show(idx); stop(); start(); }); });
+      if (prev) prev.addEventListener('click', function () { show(i - 1); stop(); start(); });
+      if (next) next.addEventListener('click', function () { show(i + 1); stop(); start(); });
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+
+      start();
+    })();
+  </script>
+  <script src="scripts/header.js"></script>
+  <script src="scripts/mega-menu.js"></script>
+  <script src="scripts/cart-drawer.js"></script>
+
+</body>
+</html>
