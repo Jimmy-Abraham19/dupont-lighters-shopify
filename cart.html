@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 
@@ -118,8 +118,7 @@
         <span aria-hidden="true">/</span>
         <span aria-current="page">Cart</span>
       </nav>
-      <span class="eyebrow" style="margin-top: var(--sp-4);">Bag</span>
-      <h1 class="page-head__title">Your cart</h1>
+      <h1 class="page-head__title" style="margin-top: var(--sp-4);">Your cart</h1>
       <p class="page-head__lede">
         Two pieces, ready for complimentary insured shipping. Review your selection,
         then proceed to a secure checkout.
@@ -131,7 +130,7 @@
       <h2 id="cart-title" class="sr-only">Cart items and summary</h2>
 
       <!-- Left: line items -->
-      <div class="cart-lines">
+      <div class="cart-lines" data-reveal-stagger="100">
 
         <article class="cart-item">
           <a class="cart-item__media" href="product.html">
@@ -179,7 +178,7 @@
       </div>
 
       <!-- Right: summary -->
-      <aside class="cart-summary" aria-label="Order summary">
+      <aside class="cart-summary" aria-label="Order summary" data-reveal>
         <h3 class="cart-summary__title">Order summary</h3>
 
         <div class="cart-summary__row">
@@ -212,7 +211,7 @@
 
     <!-- ==================== UPSELL RAIL ==================== -->
     <section class="product-rail container" aria-labelledby="upsell-title" data-rail>
-      <div class="product-rail__head product-rail__head--centered">
+      <div class="product-rail__head product-rail__head--centered" data-reveal>
         <h2 id="upsell-title" class="h2 product-rail__title">You may also like</h2>
         <a class="link-dotted product-rail__viewall" href="collection.html">View all</a>
       </div>
@@ -220,7 +219,7 @@
         <button type="button" class="product-rail__arrow product-rail__arrow--prev" aria-label="Previous" data-rail-prev>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 6 9 12 15 18"/></svg>
         </button>
-        <div class="product-rail__track" data-rail-track>
+        <div class="product-rail__track" data-rail-track data-reveal-stagger="100">
 
           <article class="upsell-card">
             <a class="upsell-card__link" href="product.html">
@@ -408,6 +407,7 @@
   <script src="scripts/mega-menu.js"></script>
   <script src="scripts/carousel.js"></script>
   <script src="scripts/cart-drawer.js"></script>
+  <script src="scripts/reveal.js"></script>
 
 </body>
 </html>

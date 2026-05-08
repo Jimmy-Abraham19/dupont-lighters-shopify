@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 
@@ -166,7 +166,7 @@
 
     <!-- ==================== COLLECTIONS (3-up tiles) ==================== -->
     <section class="section container" aria-labelledby="collections-title">
-      <div class="section-title">
+      <div class="section-title" data-reveal>
         <span class="eyebrow">Our Collections</span>
         <h2 id="collections-title" class="h2">Three families, one savoir-faire</h2>
         <p class="section-desc">
@@ -175,7 +175,7 @@
         </p>
       </div>
 
-      <div class="collection-tiles">
+      <div class="collection-tiles" data-reveal-stagger="120">
         <a class="collection-tile" href="collection.html">
           <div class="collection-tile__media">
             <img src="images/collections/ligne-2.webp" alt="Ligne 2 — black and gold lighter">
@@ -213,7 +213,7 @@
 
     <!-- ==================== NEW ARRIVALS ==================== -->
     <section class="section container" aria-labelledby="new-arrivals-title">
-      <div class="row-head">
+      <div class="row-head" data-reveal>
         <div>
           <span class="eyebrow">Spring 2026</span>
           <h2 id="new-arrivals-title" class="h2" style="margin-top: var(--sp-3);">New arrivals</h2>
@@ -221,7 +221,7 @@
         <a class="link-dotted" href="collection.html">View all</a>
       </div>
 
-      <div class="product-grid">
+      <div class="product-grid" data-reveal-stagger="100">
         <a class="product-card" href="product.html">
           <div class="product-card__media">
             <img class="product-card__media-primary" src="images/products/ligne-2-palladium.webp" alt="Ligne 2 Palladium lighter">
@@ -270,7 +270,7 @@
 
     <!-- ==================== HERITAGE EDITORIAL ==================== -->
     <section class="section container" aria-labelledby="heritage-title">
-      <div class="editorial">
+      <div class="editorial" data-reveal>
         <div class="editorial__media">
           <img src="images/editorial/heritage-atelier.webp" alt="Heritage — S.T. Dupont lighters on archival pages">
         </div>
@@ -294,7 +294,7 @@
 
     <!-- ==================== FEATURE BAND / QUOTE ==================== -->
     <section class="feature-band" aria-label="Maison quote">
-      <div class="feature-band__inner">
+      <div class="feature-band__inner" data-reveal>
         <span class="eyebrow" style="color: rgba(255,255,255,0.7);">The signature</span>
         <blockquote style="margin-top: var(--sp-3);">
           "Open a DuPont and you hear it before you see it — the unmistakable cling of a lighter made in Faverges."
@@ -305,7 +305,7 @@
 
     <!-- ==================== CRAFTSMANSHIP EDITORIAL (reverse) ==================== -->
     <section class="section container" aria-labelledby="craft-title">
-      <div class="editorial editorial--reverse">
+      <div class="editorial editorial--reverse" data-reveal>
         <div class="editorial__media">
           <img src="images/editorial/craftsmanship.webp" alt="Craftsmanship — gloved hands finishing a Dupont lighter">
         </div>
@@ -324,7 +324,7 @@
     </section>
 
     <!-- ==================== NEWSLETTER CTA ==================== -->
-    <section class="newsletter-cta" aria-labelledby="newsletter-title">
+    <section class="newsletter-cta" aria-labelledby="newsletter-title" data-reveal>
       <span class="eyebrow">The DuPont Club</span>
       <h2 id="newsletter-title" class="h2" style="margin-top: var(--sp-3);">Be first to our collectors' releases.</h2>
       <p class="section-desc">Early access to limited editions, atelier stories, and private pre-orders.</p>
@@ -430,6 +430,7 @@
   <script src="scripts/header.js"></script>
   <script src="scripts/mega-menu.js"></script>
   <script src="scripts/cart-drawer.js"></script>
+  <script src="scripts/reveal.js"></script>
 
 </body>
 </html>

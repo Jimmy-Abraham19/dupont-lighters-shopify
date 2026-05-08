@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 
@@ -329,7 +329,7 @@
         <button type="button" class="product-rail__arrow product-rail__arrow--prev" aria-label="Previous" data-rail-prev>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 6 9 12 15 18"/></svg>
         </button>
-        <div class="product-rail__track" data-rail-track>
+        <div class="product-rail__track" data-rail-track data-reveal-stagger="100">
           <a class="product-card" href="product.html">
             <div class="product-card__media">
               <img class="product-card__media-primary" src="images/products/ligne-2-gold-guilloche.webp" alt="Ligne 2 Gold Guilloché lighter">
@@ -407,7 +407,7 @@
         <button type="button" class="product-rail__arrow product-rail__arrow--prev" aria-label="Previous" data-rail-prev>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 6 9 12 15 18"/></svg>
         </button>
-        <div class="product-rail__track" data-rail-track>
+        <div class="product-rail__track" data-rail-track data-reveal-stagger="100">
           <a class="product-card" href="product.html">
             <div class="product-card__media">
               <img class="product-card__media-primary" src="images/products/ligne-2-palladium.webp" alt="Ligne 2 Palladium lighter">
@@ -477,8 +477,8 @@
 
     <!-- ==================== CRAFT IS A COMMITMENT ==================== -->
     <section class="craft-section container" aria-labelledby="craft-title">
-      <h2 id="craft-title" class="craft-section__title">Craft is a commitment</h2>
-      <div class="craft-grid">
+      <h2 id="craft-title" class="craft-section__title" data-reveal>Craft is a commitment</h2>
+      <div class="craft-grid" data-reveal-stagger="140">
         <article class="craft-card">
           <div class="craft-card__media">
             <img src="images/editorial/technical%20excellence.webp" alt="Technical excellence — gold lighter detail">
@@ -511,7 +511,7 @@
 
     <!-- ==================== 150 YEARS OF KNOW-HOW ==================== -->
     <section class="heritage-section" aria-labelledby="heritage-title">
-      <div class="heritage-hero">
+      <div class="heritage-hero" data-reveal>
         <img src="images/editorial/Discover%20our%20heritage.webp" alt="Atelier craftsmen at the S.T. Dupont workshop">
         <div class="heritage-hero__overlay">
           <div class="heritage-hero__plate">
@@ -528,7 +528,7 @@
       </div>
 
       <div class="container">
-        <div class="services-grid">
+        <div class="services-grid" data-reveal-stagger="120">
           <article class="service-card">
             <div class="service-card__media">
               <img src="images/editorial/After%20sales%20service.webp" alt="After-sales service — DuPont atelier">
@@ -630,6 +630,7 @@
   <script src="scripts/carousel.js"></script>
   <script src="scripts/pdp.js"></script>
   <script src="scripts/cart-drawer.js"></script>
+  <script src="scripts/reveal.js"></script>
 
 </body>
 </html>

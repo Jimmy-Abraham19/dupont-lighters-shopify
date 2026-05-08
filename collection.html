@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 
@@ -184,7 +184,7 @@
           </label>
         </div>
 
-        <div class="product-grid product-grid--plp">
+        <div class="product-grid product-grid--plp" data-reveal-stagger="90">
           <a class="product-card" href="product.html">
             <div class="product-card__media">
               <img class="product-card__media-primary" src="images/products/ligne-2-palladium.webp" alt="Ligne 2 Palladium lighter">
@@ -252,18 +252,13 @@
           </a>
         </div>
 
-        <nav class="pagination" aria-label="Pagination">
-          <a class="pagination__arrow" href="#" aria-label="Previous page" aria-disabled="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="15 6 9 12 15 18"/></svg>
-          </a>
-          <a class="pagination__page is-current" href="#" aria-current="page">1</a>
-          <a class="pagination__page" href="#">2</a>
-          <a class="pagination__page" href="#">3</a>
-          <a class="pagination__page" href="#">4</a>
-          <a class="pagination__arrow" href="#" aria-label="Next page">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><polyline points="9 6 15 12 9 18"/></svg>
-          </a>
-        </nav>
+        <div class="plp-spinner" data-plp-spinner aria-live="polite" aria-label="Loading more products" style="display:none;">
+          <span class="plp-spinner__dot"></span>
+          <span class="plp-spinner__dot"></span>
+          <span class="plp-spinner__dot"></span>
+        </div>
+        <div class="plp-sentinel" data-plp-sentinel aria-hidden="true"></div>
+        <p class="plp-end" data-plp-end style="display:none;">— You've reached the end of the collection —</p>
       </div>
     </section>
 
@@ -330,6 +325,8 @@
   <script src="scripts/header.js"></script>
   <script src="scripts/mega-menu.js"></script>
   <script src="scripts/cart-drawer.js"></script>
+  <script src="scripts/reveal.js"></script>
+  <script src="scripts/infinite-scroll.js"></script>
 
 </body>
 </html>
